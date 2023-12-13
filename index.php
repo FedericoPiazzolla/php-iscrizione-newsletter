@@ -1,4 +1,5 @@
 <?php
+session_start();
 include __DIR__ . "/function.php";
 
 if (isset($_POST['email'])) {
