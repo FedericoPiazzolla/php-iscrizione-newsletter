@@ -1,14 +1,5 @@
 <?php 
-  function email_control($email) {
-    if (isset($email)) {
-
-      if (!str_contains($email, '@') || !str_contains($email, '.')) {
-        return false;
-      } else {
-        return true;
-      };
-    };
-  };
+  include __DIR__ . "/function.php";
 
   $email_convalidation = email_control($_POST['email']);
 ?>
@@ -41,9 +32,12 @@
     </form>
     <!-- /Email Form -->
 
+    <!-- Message of login -->
     <h2 class="text-center mt-5 alert <?= $email_convalidation ? 'alert-success' : 'alert-danger' ?>">
       <?= $email_convalidation ? 'Indirizzo Mail valido!!' : 'Indirizzo Email NON valido' ?>
     </h2>
+    <!-- /Message of login -->
+    
     </div>
   </main>
 </body>
