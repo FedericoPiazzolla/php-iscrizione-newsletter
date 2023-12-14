@@ -1,5 +1,6 @@
 <?php
-include __DIR__ . "/function.php";
+// session_start(); //problema tra sessioni
+include_once __DIR__ . "/function.php";
 
 if (isset($_POST['email'])) {
   $email_convalidation = email_control($_POST['email']);
@@ -32,7 +33,13 @@ if (isset($_POST['email'])) {
       <form class="form-control align-items-center d-flex flex-column" action="index.php" method="POST">
 
         <label class="form-label" for="email">Email Address</label>
-        <input class="form-control" type="text" id="email" name="email" placeholder="name@gmail.com">
+        <input class="form-control" 
+        type="text" 
+        id="email" 
+        name="email"
+        placeholder="name@gmail.com" 
+        value="<?php echo $_POST['email'] ?? ''?>"
+        >
 
         <button class="btn btn-primary mt-4" type="submit">LOGIN</button>
       </form>

@@ -1,5 +1,12 @@
 <?php 
 session_start();
+  /**
+   * Controlla se la mail è ben formata sia con @ che con il .
+   * @param mixed string $email
+   * 
+   * @return [boolean]
+   * false se la mail non è valida, altrimenti true
+   */
   function email_control($email) {
     if (isset($email)) {
 
